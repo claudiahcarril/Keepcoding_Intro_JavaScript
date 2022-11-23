@@ -1,0 +1,21 @@
+{
+  "name": "entrega-practica-javascript-desde-0",
+  "version": "1.0.0",
+  "description": "Necesitamos desarrollar una aplicación hecha con javascript que nos ayude a gestionar los alumnos de nuestra clase.",
+  "main": "challenge.js",
+  "type": "module",
+  "scripts": {
+    "start": "challenge.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiahcarril/Keepcoding_Intro_JavaScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiahcarril/Keepcoding_Intro_JavaScript/issues"
+  },
+  "homepage": "https://github.com/claudiahcarril/Keepcoding_Intro_JavaScript#readme"
+}

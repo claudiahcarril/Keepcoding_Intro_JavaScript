@@ -72,22 +72,27 @@ async function playGame() {
 
     switch(numberFromConsole) {
       case 1:
-        myModule.showNumberStudents(myModule.students)
+        // console.table(myModule.showStudents(myModule.students))
         break;
       case 2:
-        myModule.showNumberStudents(myModule.students)
+        // console.log(myModule.showNumberStudents)
         break;
       case 3:
+        // console.log(myModule.showNameStudents)
         break;
       case 4:
+        // console.table(myModule.eliminateLastStudent)
         break;
       case 5:
+        // ----------------------------------------------------> FALTA
         break;
       case 6:
+        // console.log(myModule.femaleStudents)
         break;
       case 7:
         break;
       case 8:
+        // console.log(myModule.anyFemaleStudent)
         break;
       case 9:
         break;
@@ -115,8 +120,9 @@ async function playGame() {
 
 }
 
-
 // playGame()
 
-myModule.showNumberStudents
+
+console.log(myModule.ageStudents)
+// console.table(myModule.students)
 process.exit()

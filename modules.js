@@ -26,16 +26,50 @@ let count = 0
 export const showNumberStudents = students.forEach(student => {
     count++
 });
-console.log(count)
+
 
 
 //   3- Mostrar por consola todos los nombres de los alumnos.
+export const showNameStudents = students.forEach(student => {
+    student.name
+})
+
+
 //   4- Eliminar el último alumno de la clase.
+export const eliminateLastStudent = students.slice(1,2)
+
+
+
 //   5- Eliminar un alumno aleatoriamente de la clase.
+export function randomStudent(array){
+    for (let i = 0; i < array.length; i++) {
+        const element = array[Math.floor(Math.random() * array.lenght)]
+        array = array.slice(element)        
+    }
+    return array
+} 
+
+
 //   6- Mostrar por consola todos los datos de los alumnos que son chicas.
+export const femaleStudents = students.filter(student => student.gender === 'female')
+
+
+
 //   7- Mostrar por consola el número de chicos y chicas que hay en la clase.
+
+
+
+
 //   8- Mostrar true o false por consola si todos los alumnos de la clase son chicas.
+export const anyFemaleStudent = students.some(student => student.gender === 'female')
+
+
+
 //   9- Mostrar por consola los nombres de los alumnos que tengan entre 20 y 25 años.
+export const ageStudents = students.filter(student => student.age > 20 && student.age < 25)
+
+
+
 //   10- Añadir un alumno nuevo con los siguientes datos:
         //   nombre aleatorio.
         //   edad aleatoria entre 20 y 50 años.

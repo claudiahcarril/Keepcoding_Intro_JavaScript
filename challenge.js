@@ -100,6 +100,8 @@ async function playGame() {
         // -------------------------------------> REVISAR!
         break;
       case 10:
+        // console.table(myModule.students)
+        // -------------------------------------> REVISAR!
         break;  
       case 11:
         break;
@@ -126,6 +128,8 @@ async function playGame() {
 // playGame()
 
 
-console.log(myModule.numberGenderStudents(myModule.students))
-// console.table(myModule.students)
+console.table(myModule.students)
 process.exit()
+
+
+

@@ -87,6 +87,38 @@ export const ageStudents = students.filter(student => student.age > 20 && studen
         //   género aleatorio.
         //   listado de calificaciones vacío.
         // -----> ¡OJO!, el nombre y el género tienen que ir acordes.
+
+function getRandom(array) {
+    let random = array[Math.floor((Math.random()*array.length))];
+    return random
+}   
+
+function calculateRandomNumber(min, max) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    return randomNumber;
+}
+
+export function addRandomStudent(array){
+    let nameStudent
+    let ageStudent = calculateRandomNumber(20, 50)
+    let randomGender = getRandom(availableGenders)
+    if (randomGender === 'female') {
+        nameStudent = getRandom(availableFemaleNames)
+    } else {
+        nameStudent = getRandom(availableMaleNames)
+    }
+    return {
+        age: ageStudent,
+        examScores: [],
+        gender: randomGender,
+        name: nameStudent,
+    }
+}
+
+export const newStudent = students.push(addRandomStudent(availableGenders))
+
+ 
+
   
 //   11- Mostrar por consola el nombre de la persona más joven de la clase.
 //   ------->¡OJO!, si varias personas de la clase comparten la edad más baja, cualquiera de ellos es una respuesta válida.

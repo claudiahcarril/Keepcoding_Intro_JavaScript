@@ -90,11 +90,14 @@ async function playGame() {
         // console.log(myModule.femaleStudents)
         break;
       case 7:
+        // console.log(myModule.numberGenderStudents(myModule.students))
         break;
       case 8:
         // console.log(myModule.anyFemaleStudent)
         break;
       case 9:
+        // console.log(myModule.ageStudents)
+        // -------------------------------------> REVISAR!
         break;
       case 10:
         break;  
@@ -123,6 +126,6 @@ async function playGame() {
 // playGame()
 
 
-console.log(myModule.ageStudents)
+console.log(myModule.numberGenderStudents(myModule.students))
 // console.table(myModule.students)
 process.exit()

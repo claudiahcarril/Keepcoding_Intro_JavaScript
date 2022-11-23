@@ -56,7 +56,18 @@ export const femaleStudents = students.filter(student => student.gender === 'fem
 
 
 //   7- Mostrar por consola el número de chicos y chicas que hay en la clase.
-
+export function numberGenderStudents(array) {
+    let femaleStudents = 0
+    let maleStudents = 0
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].gender === 'female'){
+            femaleStudents++
+        } else {
+            maleStudents++
+        }
+    }
+    return `Número de chicas: ${femaleStudents} y número de chicos: ${maleStudents}`
+}
 
 
 

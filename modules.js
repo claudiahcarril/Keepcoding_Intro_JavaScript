@@ -121,7 +121,23 @@ export const newStudent = students.push(addRandomStudent(availableGenders))
 
   
 //   11- Mostrar por consola el nombre de la persona más joven de la clase.
-//   ------->¡OJO!, si varias personas de la clase comparten la edad más baja, cualquiera de ellos es una respuesta válida.
+//   ------->¡OJO!, si varias personas de la clase comparten la edad más baja, 
+//           cualquiera de ellos es una respuesta válida.
+
+export function youngerStudent(array) {
+    let youngerStudent
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].age < array[i + 1].age){
+            youngerStudent = array[i].name
+        } else {
+            youngerStudent = array[i + 1].name
+        }
+        
+    }
+    return youngerStudent
+}
+
+
   
 //   12- Mostrar por consola la edad media de todos los alumnos de la clase.
 //   13- Mostrar por consola la edad media de las chicas de la clase.

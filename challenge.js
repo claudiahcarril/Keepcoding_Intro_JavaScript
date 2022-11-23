@@ -127,8 +127,8 @@ async function playGame() {
 
 // playGame()
 
-
 console.table(myModule.students)
+console.log(myModule.youngerStudent(myModule.students))
 process.exit()
 
 

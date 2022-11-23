@@ -5,7 +5,7 @@
   "main": "challenge.js",
   "type": "module",
   "scripts": {
-    "start": "challenge.js"
+    "start": "node challenge.js"
   },
   "repository": {
     "type": "git",

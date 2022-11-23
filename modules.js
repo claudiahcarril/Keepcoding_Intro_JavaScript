@@ -21,8 +21,14 @@ export function showStudents(students) {
     console.table(students)
 }
 
-
 //   2- Mostrar por consola la cantidad de alumnos que hay en clase.
+let count = 0
+export const showNumberStudents = students.forEach(student => {
+    count++
+});
+console.log(count)
+
+
 //   3- Mostrar por consola todos los nombres de los alumnos.
 //   4- Eliminar el último alumno de la clase.
 //   5- Eliminar un alumno aleatoriamente de la clase.

@@ -111,6 +111,7 @@ async function playGame() {
         // console.log(myModule.middleAgesStudents)
         break;
       case 13:
+        // console.log(myModule.getMiddleAgeFemale(myModule.students))
         break;
       case 14:
         break;
@@ -131,9 +132,7 @@ async function playGame() {
 // playGame()
 
 console.table(myModule.students)
-console.log(myModule.sumAgeStudents)
-console.log(myModule.numStudents)
-console.log(myModule.middleAgesStudents)
+console.log(myModule.getMiddleAgeFemale(myModule.students))
 process.exit()
 
 

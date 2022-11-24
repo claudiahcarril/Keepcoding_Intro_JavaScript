@@ -253,3 +253,19 @@ export function getHigherNote(array) {
 
 //   18- Añadir un punto extra a cada nota existente de todos los alumnos. 
 // (Recordad que la nota máxima posible es 10. Si los alumnos aún no tienen registrada ninguna nota, les pondremos un 10.)
+export function giveExtraPoint(array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].examScores.length === 0) {
+            array[i].examScores.push(10)
+        } else {
+            for (let index = 0; index < array[i].examScores.length; index++) {
+                if (array[i].examScores[index] < 10) {
+                    array[i].examScores[index]++
+                } 
+            }
+        }
+    } 
+    return array
+}
+
+

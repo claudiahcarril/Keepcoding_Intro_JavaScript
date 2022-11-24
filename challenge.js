@@ -125,7 +125,7 @@ async function playGame() {
         // console.log(myModule.getHigherNote(myModule.students))
         break;  
       case 18:
-        //
+        // console.table(myModule.giveExtraPoint(myModule.students))
         break;
     }
   
@@ -138,7 +138,7 @@ async function playGame() {
 console.table(myModule.students)
 // console.log(myModule.students[0].examScores)
 // console.log(myModule.students[0].examScores.reduce((sum, note) => sum + note, 0))
-console.log(myModule.getHigherNote(myModule.students))
+console.table(myModule.giveExtraPoint(myModule.students))
 process.exit()
 
 

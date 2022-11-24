@@ -1,12 +1,12 @@
 export const students = [{
     age: 32,
-    examScores: [5],
+    examScores: [5, 6],
     gender: 'male',
     name: 'edu'
   },
   {
     age: 29,
-    examScores: [6],
+    examScores: [6, 4],
     gender: 'female',
     name: 'silvia'
   }]
@@ -217,15 +217,39 @@ export function getBestStudent(array) {
     return bestStudent
 }
         
-   
 
-  
   
 //   17- Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece.
+export function getHigherNote(array) {
+    let bestMiddleNote = ''
+    let sumNotes = 0
+    let bestNote = []
+    let middleNote
+    for (let i = 0; i < array.length; i++) {
+        sumNotes = array[i].examScores.reduce((sum, note) => sum + note, 0)
+        let arrayNotes = array[i].examScores.length
+        middleNote = parseFloat(sumNotes / arrayNotes).toFixed(2)
+        bestNote.push(middleNote)
+    }
+    for (let index = 0; index < bestNote.length; index++) {
+        if (index === 0) {
+            if (bestNote[index] > bestNote[index + 1]) {
+                bestMiddleNote = array[index].name
+            } else {
+                bestMiddleNote = array[index + 1].name
+            }
+        } else {
+            if (bestNote[index] > bestNote[index + 1] && bestNote[index] > bestNote[index - 1]) {
+                bestMiddleNote = array[index].name
+            } 
+        }
+        
+    }
+    let higherNote = Math.max(...bestNote)
 
-
-
+    return `La nota media más alta es: ${higherNote} del alumn@: ${bestMiddleNote}`
+}
 
 
 //   18- Añadir un punto extra a cada nota existente de todos los alumnos. 
-    // (Recordad que la nota máxima posible es 10. Si los alumnos aún no tienen registrada ninguna nota, les pondremos un 10.)
+// (Recordad que la nota máxima posible es 10. Si los alumnos aún no tienen registrada ninguna nota, les pondremos un 10.)

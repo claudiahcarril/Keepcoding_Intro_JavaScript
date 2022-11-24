@@ -122,7 +122,7 @@ async function playGame() {
         // console.log(myModule.getBestStudent(myModule.students))
         break;
       case 17:
-        //
+        // console.log(myModule.getHigherNote(myModule.students))
         break;  
       case 18:
         //
@@ -138,7 +138,7 @@ async function playGame() {
 console.table(myModule.students)
 // console.log(myModule.students[0].examScores)
 // console.log(myModule.students[0].examScores.reduce((sum, note) => sum + note, 0))
-console.log(myModule.getBestStudent(myModule.students))
+console.log(myModule.getHigherNote(myModule.students))
 process.exit()
 
 

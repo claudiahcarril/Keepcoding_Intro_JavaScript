@@ -139,8 +139,8 @@ export function youngerStudent(array) {
   
 //   12- Mostrar por consola la edad media de todos los alumnos de la clase.
 export const sumAgeStudents = students.reduce((sum, student) => sum + student.age, 0)
-
-
+export const numStudents = students.length
+export const middleAgesStudents = sumAgeStudents / numStudents
 
 
 //   13- Mostrar por consola la edad media de las chicas de la clase.

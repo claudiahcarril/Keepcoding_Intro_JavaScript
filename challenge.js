@@ -21,7 +21,6 @@ function getNumberFromConsole() {
   const promise = new Promise((resolve, reject) => {
       rl.question('Introduce un número de 1 a 18: ', (num) => {   
         rl.pause();
-        console.log(num)
         if (isInt(num)) {
           resolve(num)
         } else {
@@ -52,17 +51,17 @@ async function playGame() {
     15: "Ordenar el array de alumnos alfabéticamente según su nombre",
     16: "Mostrar por consola el alumno de la clase con las mejores notas",
     17: "Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece",
-    18: "Añadir un punto extra a cada nota existente de todos los alumno",
+    18: "Añadir un punto extra a cada nota existente de todos los alumnos",
   })
 
-  let numberFromConsole
   do {
-    try {
-      numberFromConsole = await getNumberFromConsole()
-    } catch (error){
-      console.log(error)
-      process.exit(0)
-    }
+    const numberFromConsole = await getNumberFromConsole()
+    // try {
+    //   numberFromConsole = await getNumberFromConsole()
+    // } catch (error){
+    //   console.log(error)
+    //   process.exit(0)
+    // }
 
     if (numberFromConsole === 0) {
       process.exit(0)
@@ -117,13 +116,16 @@ async function playGame() {
         // console.table(myModule.newNote)
         break;
       case 15:
-        // console.log(myModule.orderAlphabetically(myModule.students))
+        // console.table(myModule.orderAlphabetically(myModule.students))
         break;
       case 16:
+        // console.log(myModule.getBestStudent(myModule.students))
         break;
       case 17:
+        //
         break;  
       case 18:
+        //
         break;
     }
   
@@ -134,7 +136,9 @@ async function playGame() {
 // playGame()
 
 console.table(myModule.students)
-console.log(myModule.orderAlphabetically(myModule.students))
+// console.log(myModule.students[0].examScores)
+// console.log(myModule.students[0].examScores.reduce((sum, note) => sum + note, 0))
+console.log(myModule.getBestStudent(myModule.students))
 process.exit()
 
 

@@ -1,12 +1,12 @@
 export const students = [{
     age: 32,
-    examScores: [],
+    examScores: [5],
     gender: 'male',
     name: 'edu'
   },
   {
     age: 29,
-    examScores: [],
+    examScores: [6],
     gender: 'female',
     name: 'silvia'
   }]
@@ -180,25 +180,52 @@ export const newNote = getNewNote(students)
 export function orderAlphabetically(array) {
     return array.sort((a, b) => {
         if (a.name < b.name) {
-            return -1;
+            return -1
           }
           if (a.name > b.name) {
-            return 1;
+            return 1
           }
-          return 0;
-        });
+          return 0
+        })
 }
-
-
 
 
 //   16- Mostrar por consola el alumno de la clase con las mejores notas.
     //(El alumno con mejores notas es aquel cuyo sumatorio de todas sus notas es el valor más alto de todos.)
+export function getBestStudent(array) {
+    let bestStudent = ''
+    let sumNotes = 0
+    let bestNote = []
+    for (let i = 0; i < array.length; i++) {
+        sumNotes = array[i].examScores.reduce((sum, note) => sum + note, 0) 
+        bestNote.push(sumNotes)
+    }
+    for (let index = 0; index < bestNote.length; index++) {
+        if (index === 0) {
+            if (bestNote[index] > bestNote[index + 1]) {
+                bestStudent = array[index].name
+            } else {
+                bestStudent = array[index + 1].name
+            }
+        } else {
+            if (bestNote[index] > bestNote[index + 1] && bestNote[index] > bestNote[index - 1]) {
+                bestStudent = array[index].name
+            } 
+        }
+        
+    }
+    return bestStudent
+}
+        
+   
 
-
-
-    
+  
   
 //   17- Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece.
+
+
+
+
+
 //   18- Añadir un punto extra a cada nota existente de todos los alumnos. 
     // (Recordad que la nota máxima posible es 10. Si los alumnos aún no tienen registrada ninguna nota, les pondremos un 10.)

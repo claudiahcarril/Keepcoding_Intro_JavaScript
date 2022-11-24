@@ -172,13 +172,32 @@ export function getNewNote(array) {
     return array
 }
 
-
+export const newNote = getNewNote(students)
 
 
 
 //   15- Ordenar el array de alumnos alfabéticamente según su nombre. 
+export function orderAlphabetically(array) {
+    return array.sort((a, b) => {
+        if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
+}
+
+
+
+
 //   16- Mostrar por consola el alumno de la clase con las mejores notas.
     //(El alumno con mejores notas es aquel cuyo sumatorio de todas sus notas es el valor más alto de todos.)
+
+
+
+    
   
 //   17- Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece.
 //   18- Añadir un punto extra a cada nota existente de todos los alumnos. 

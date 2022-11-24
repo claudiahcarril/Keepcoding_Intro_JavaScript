@@ -157,7 +157,25 @@ export function getMiddleAgeFemale(array) {
 }
 
 
-//   14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.
+//   14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, 
+//      tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.
+function calculateRandomNote(min, max) {
+    const randomNote = Math.floor(Math.random() * (max - min + 1)) + min;
+    return randomNote;
+}
+
+export function getNewNote(array) {
+    for (let i = 0; i < array.length; i++) {
+        let randomNoteStudent = calculateRandomNote(0, 10)
+        array[i].examScores.push(randomNoteStudent)
+    }
+    return array
+}
+
+
+
+
+
 //   15- Ordenar el array de alumnos alfabéticamente según su nombre. 
 //   16- Mostrar por consola el alumno de la clase con las mejores notas.
     //(El alumno con mejores notas es aquel cuyo sumatorio de todas sus notas es el valor más alto de todos.)

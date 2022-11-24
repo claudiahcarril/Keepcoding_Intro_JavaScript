@@ -22,7 +22,7 @@ function getNumberFromConsole() {
       rl.question('Introduce un número de 1 a 18: ', (num) => {   
         rl.pause();
         if (isInt(num)) {
-          resolve(num)
+          resolve(parseInt(num))
         } else {
           reject('Debes introducir un número del 1 al 18')
         }
@@ -54,92 +54,85 @@ async function playGame() {
     18: "Añadir un punto extra a cada nota existente de todos los alumnos",
   })
 
+  let numberFromConsole
   do {
-    const numberFromConsole = await getNumberFromConsole()
-    // try {
-    //   numberFromConsole = await getNumberFromConsole()
-    // } catch (error){
-    //   console.log(error)
-    //   process.exit(0)
-    // }
-
+    do {
+      try {
+        numberFromConsole = await getNumberFromConsole()
+      } catch (error){
+        console.log(error)
+        numberFromConsole = '-'
+      }
+    } while (numberFromConsole === '-')
+    
     if (numberFromConsole === 0) {
       process.exit(0)
-    } else 
-
-
+    } 
 
     switch(numberFromConsole) {
       case 1:
-        // console.table(myModule.showStudents(myModule.students))
+        myModule.showStudents(myModule.students)
         break;
       case 2:
-        // console.log(myModule.showNumberStudents)
+        console.log(myModule.showNumberStudents(myModule.students))
         break;
       case 3:
-        // console.log(myModule.showNameStudents)
+        console.log(myModule.showNameStudents(myModule.students))
         break;
       case 4:
-        // console.table(myModule.eliminateLastStudent)
+        myModule.eliminateLastStudent(myModule.students)
         break;
       case 5:
-        // ----------------------------------------------------> FALTA
+        myModule.eliminateRandomStudent(myModule.students)
         break;
       case 6:
-        // console.log(myModule.femaleStudents)
+        console.table(myModule.getFemaleStudents(myModule.students))
         break;
       case 7:
-        // console.log(myModule.numberGenderStudents(myModule.students))
+        console.log(myModule.numberGenderStudents(myModule.students))
         break;
       case 8:
-        // console.log(myModule.anyFemaleStudent)
+        console.table(myModule.anyFemaleStudent(myModule.students))
         break;
       case 9:
-        // console.log(myModule.ageStudents)
-        // -------------------------------------> REVISAR!
+        console.table(myModule.ageStudents(myModule.students))
         break;
       case 10:
-        // console.table(myModule.students)
-        // -------------------------------------> REVISAR!
+        console.table(myModule.addRandomStudent(myModule.students))
         break;  
       case 11:
-        // console.log(myModule.youngerStudent(myModule.students))
-        // -------------------------------------> REVISAR!
+        console.log(myModule.getYoungerStudent(myModule.students))
         break;
       case 12:
-        // console.log(myModule.middleAgesStudents)
+        console.table(myModule.getMiddleAgesStudents(myModule.students))
         break;
       case 13:
-        // console.log(myModule.getMiddleAgeFemale(myModule.students))
+        console.log(myModule.getMiddleAgeFemale(myModule.students))
         break;
       case 14:
-        // console.table(myModule.newNote)
+        console.table(myModule.getNewNote(myModule.students))
         break;
       case 15:
-        // console.table(myModule.orderAlphabetically(myModule.students))
+        console.table(myModule.orderAlphabetically(myModule.students))
         break;
       case 16:
-        // console.log(myModule.getBestStudent(myModule.students))
+        console.log(myModule.getBestStudent(myModule.students))
         break;
       case 17:
-        // console.log(myModule.getHigherNote(myModule.students))
+        console.log(myModule.getHigherNote(myModule.students))
         break;  
       case 18:
-        // console.table(myModule.giveExtraPoint(myModule.students))
+        console.table(myModule.giveExtraPoint(myModule.students))
         break;
     }
-  
-  } while (numberFromConsole > 0 && numberFromConsole < 19)
 
+  } while (numberFromConsole > 0 && numberFromConsole < 19)
 }
 
-// playGame()
-
-console.table(myModule.students)
-// console.log(myModule.students[0].examScores)
-// console.log(myModule.students[0].examScores.reduce((sum, note) => sum + note, 0))
-console.table(myModule.giveExtraPoint(myModule.students))
-process.exit()
+await playGame()
+// process.exit(0)
 
 
+// REVISAR CADA REQUISITO Y LO QUE DEVUELVE
+// ACABAR PROMESA Y SWITCH
 

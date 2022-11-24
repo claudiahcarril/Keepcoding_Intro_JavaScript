@@ -22,36 +22,43 @@ export function showStudents(students) {
 }
 
 //   2- Mostrar por consola la cantidad de alumnos que hay en clase.
-let count = 0
-export const showNumberStudents = students.forEach(student => {
-    count++
-});
+export function showNumberStudents(array) {
+    let count = 0
+    const showNumberStudents = students.forEach(student => {
+        count++
+    })
+    return count
+}
 
 
 
 //   3- Mostrar por consola todos los nombres de los alumnos.
-export const showNameStudents = students.forEach(student => {
-    student.name
-})
+export function showNameStudents(array) {
+    array.forEach(function(student, array) {
+        console.log(student.name)
+    })
+}
 
 
 //   4- Eliminar el último alumno de la clase.
-export const eliminateLastStudent = students.slice(1,2)
+export function eliminateLastStudent(array) {
+    return array.pop()
+}
 
 
 
 //   5- Eliminar un alumno aleatoriamente de la clase.
-export function randomStudent(array){
-    for (let i = 0; i < array.length; i++) {
-        const element = array[Math.floor(Math.random() * array.lenght)]
-        array = array.slice(element)        
-    }
-    return array
+export function eliminateRandomStudent(array){
+    const random = Math.floor(Math.random() * array.length)
+    return array.splice(random, 1)
 } 
 
 
 //   6- Mostrar por consola todos los datos de los alumnos que son chicas.
-export const femaleStudents = students.filter(student => student.gender === 'female')
+export function getFemaleStudents(array){
+    return array.filter(student => student.gender === 'female')
+}
+
 
 
 
@@ -72,13 +79,15 @@ export function numberGenderStudents(array) {
 
 
 //   8- Mostrar true o false por consola si todos los alumnos de la clase son chicas.
-export const anyFemaleStudent = students.some(student => student.gender === 'female')
-
+export function anyFemaleStudent(array){
+    return array.every(student => student.gender === 'female')
+}
 
 
 //   9- Mostrar por consola los nombres de los alumnos que tengan entre 20 y 25 años.
-export const ageStudents = students.filter(student => student.age > 20 && student.age < 25)
-
+export function ageStudents(array){
+    return array.filter(student => student.age >= 20 && student.age <= 25)
+}
 
 
 //   10- Añadir un alumno nuevo con los siguientes datos:
@@ -107,40 +116,44 @@ export function addRandomStudent(array){
     } else {
         nameStudent = getRandom(availableMaleNames)
     }
-    return {
+    let newStudent = {
         age: ageStudent,
         examScores: [],
         gender: randomGender,
         name: nameStudent,
     }
+    array.push(newStudent)
+    return array
 }
 
-export const newStudent = students.push(addRandomStudent(availableGenders))
-
- 
 
   
 //   11- Mostrar por consola el nombre de la persona más joven de la clase.
 //   ------->¡OJO!, si varias personas de la clase comparten la edad más baja, 
 //           cualquiera de ellos es una respuesta válida.
 
-export function youngerStudent(array) {
-    let youngerStudent
-    for (let i = 0; i < array.length; i++) {
-        if (array[i].age < array[i + 1].age){
-            youngerStudent = array[i].name
-        } else {
-            youngerStudent = array[i + 1].name
+export function getYoungerStudent(array) {
+    let youngerStudent = array[0]
+    for (let i = 1; i < array.length; i++) {
+        if (youngerStudent.age > array[i].age) {
+            youngerStudent = array[i]
         }
-        
-    } return youngerStudent
+    }
+    return youngerStudent.name
 }
+
+
 
   
 //   12- Mostrar por consola la edad media de todos los alumnos de la clase.
-export const sumAgeStudents = students.reduce((sum, student) => sum + student.age, 0)
-export const numStudents = students.length
-export const middleAgesStudents = sumAgeStudents / numStudents
+export function getMiddleAgesStudents(array){
+    let sumAgeStudents = array.reduce((sum, student) => sum + student.age, 0)
+    let numStudents = array.length
+    let middleAgesStudents = sumAgeStudents / numStudents
+    return parseFloat(middleAgesStudents.toFixed(2))
+}
+
+
 
 
 //   13- Mostrar por consola la edad media de las chicas de la clase.
@@ -172,17 +185,15 @@ export function getNewNote(array) {
     return array
 }
 
-export const newNote = getNewNote(students)
-
 
 
 //   15- Ordenar el array de alumnos alfabéticamente según su nombre. 
 export function orderAlphabetically(array) {
     return array.sort((a, b) => {
-        if (a.name < b.name) {
+          if (a.name.toLowerCase() < b.name.toLowerCase()) {
             return -1
           }
-          if (a.name > b.name) {
+          if (a.name.toLowerCase() > b.name.toLowerCase()) {
             return 1
           }
           return 0

@@ -133,13 +133,16 @@ export function youngerStudent(array) {
             youngerStudent = array[i + 1].name
         }
         
-    }
-    return youngerStudent
+    } return youngerStudent
 }
-
 
   
 //   12- Mostrar por consola la edad media de todos los alumnos de la clase.
+export const sumAgeStudents = students.reduce((sum, student) => sum + student.age, 0)
+
+
+
+
 //   13- Mostrar por consola la edad media de las chicas de la clase.
 //   14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.
 //   15- Ordenar el array de alumnos alfabéticamente según su nombre. 

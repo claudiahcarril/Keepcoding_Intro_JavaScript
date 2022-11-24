@@ -104,6 +104,8 @@ async function playGame() {
         // -------------------------------------> REVISAR!
         break;  
       case 11:
+        // console.log(myModule.youngerStudent(myModule.students))
+        // -------------------------------------> REVISAR!
         break;
       case 12:
         break;
@@ -128,7 +130,7 @@ async function playGame() {
 // playGame()
 
 console.table(myModule.students)
-console.log(myModule.youngerStudent(myModule.students))
+console.log(myModule.sumAgeStudents)
 process.exit()
 
 

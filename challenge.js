@@ -65,7 +65,7 @@ async function playGame() {
       }
     } while (numberFromConsole === '-')
     
-    if (numberFromConsole === 0) {
+    if (numberFromConsole === 0 || numberFromConsole > 18) {
       process.exit(0)
     } 
 
@@ -77,7 +77,7 @@ async function playGame() {
         console.log(myModule.showNumberStudents(myModule.students))
         break;
       case 3:
-        console.log(myModule.showNameStudents(myModule.students))
+        myModule.showNameStudents(myModule.students)
         break;
       case 4:
         myModule.eliminateLastStudent(myModule.students)
@@ -130,9 +130,5 @@ async function playGame() {
 }
 
 await playGame()
-// process.exit(0)
 
-
-// REVISAR CADA REQUISITO Y LO QUE DEVUELVE
-// ACABAR PROMESA Y SWITCH
 

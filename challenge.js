@@ -80,10 +80,10 @@ async function playGame() {
         myModule.showNameStudents(myModule.students)
         break;
       case 4:
-        myModule.eliminateLastStudent(myModule.students)
+        console.table(myModule.eliminateLastStudent(myModule.students))
         break;
       case 5:
-        myModule.eliminateRandomStudent(myModule.students)
+        console.table(myModule.eliminateRandomStudent(myModule.students))
         break;
       case 6:
         console.table(myModule.getFemaleStudents(myModule.students))

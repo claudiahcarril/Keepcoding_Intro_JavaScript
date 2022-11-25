@@ -42,7 +42,8 @@ export function showNameStudents(array) {
 
 //   4- Eliminar el último alumno de la clase.
 export function eliminateLastStudent(array) {
-    return array.pop()
+    array.pop()
+    return array
 }
 
 
@@ -50,7 +51,8 @@ export function eliminateLastStudent(array) {
 //   5- Eliminar un alumno aleatoriamente de la clase.
 export function eliminateRandomStudent(array){
     const random = Math.floor(Math.random() * array.length)
-    return array.splice(random, 1)
+    array.splice(random, 1)
+    return array
 } 
 
 
@@ -95,7 +97,6 @@ export function ageStudents(array){
         //   edad aleatoria entre 20 y 50 años.
         //   género aleatorio.
         //   listado de calificaciones vacío.
-        // -----> ¡OJO!, el nombre y el género tienen que ir acordes.
 
 function getRandom(array) {
     let random = array[Math.floor((Math.random()*array.length))];

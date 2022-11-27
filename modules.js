@@ -249,6 +249,9 @@ export function getHigherNote(array) {
         sumNotes = array[i].examScores.reduce((sum, note) => sum + note, 0)
         let arrayNotes = array[i].examScores.length
         middleNote = parseFloat(sumNotes / arrayNotes).toFixed(2)
+        if (isNaN(middleNote)) {
+            middleNote = 0
+        }
         bestNote.push(middleNote)
     }
     for (let index = 0; index < bestNote.length; index++) {
